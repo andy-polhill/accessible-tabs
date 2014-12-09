@@ -1,0 +1,20 @@
+{
+  "name": "accessible-tabs",
+  "version": "0.0.0",
+  "main": "lib/tabs.js",
+  "dependencies": {
+    "flight": "^1.2.0"
+  },
+  "devDependencies": {
+    "jasmine-flight": "^2.2.0"
+  },
+  "ignore": [
+    ".gitignore",
+    ".gitattributes",
+    ".travis.yml",
+    "CONTRIBUTING.md",
+    "CHANGELOG.md",
+    "package.json",
+    "karma.conf.js"
+  ]
+}
