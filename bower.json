@@ -1,0 +1,18 @@
+{
+  "name": "accessible-tabs",
+  "version": "0.0.0",
+  "homepage": "http://thatguynamedandy.github.io/accessible-tabs",
+  "description": "Sample approaches to accessible tab components",
+  "authors": [
+    "thatguynamedandy"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
