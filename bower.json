@@ -1,18 +1,21 @@
 {
   "name": "accessible-tabs",
   "version": "0.0.0",
-  "homepage": "http://thatguynamedandy.github.io/accessible-tabs",
-  "description": "Sample approaches to accessible tab components",
-  "authors": [
-    "thatguynamedandy"
-  ],
-  "license": "MIT",
-  "private": true,
+  "main": "lib/accessible-tabs.js",
+  "dependencies": {
+    "flight": "^1.2.0"
+  },
+  "devDependencies": {
+    "jasmine-flight": "^2.2.0"
+  },
   "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
+    ".gitignore",
+    ".gitattributes",
+    ".travis.yml",
+    "CONTRIBUTING.md",
+    "CHANGELOG.md",
     "test",
-    "tests"
+    "package.json",
+    "karma.conf.js"
   ]
 }
