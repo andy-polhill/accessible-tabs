@@ -1,1 +1,102 @@
-Hello World
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Accessible tabs</title>
+    <link href="./main.css"  media="screen" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <script type="text/javascript">document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
+
+    <div class="tabset">
+
+      <h2 id="navigation" class="js-hidden">
+        Quick navigation
+      </h2>
+
+      <ul class="tabs clearfix">
+        <li class="tab active-tab">
+          <a id="tab-link1" href="#panel1">Tab item 1</a>
+        </li>
+        <li class="tab">
+          <a id="tab-link2" href="#panel2">Tab item 2</a>
+        </li>
+        <li class="tab">
+          <a id="tab-link3" href="#panel3">Tab item 3</a>
+        </li>
+      </ul>
+
+      <div id="panel1" class="panel active-panel">
+        <h2  class="js-hidden">Tab content 1</h2>
+        <form>
+          <label for="name">Name</label>
+          <input type="text" id="name" />
+        </form>
+        <a href="#navigation" class="js-hidden">
+          <small>Back to top</small>
+        </a>
+      </div>
+
+      <div id="panel2" class="panel">
+        <h2  class="js-hidden">
+          Tab content 2
+        </h2>
+        <p>
+          Craft beer est salvia, bitters mlkshk paleo proident. Photo booth assumenda
+          voluptate, accusamus +1 Kickstarter bespoke swag cardigan scenester hella odio Pinterest bitters.
+        </p>
+        <p>
+          Truffaut flannel messenger bag Bushwick, drinking vinegar High Life Helvetica
+          reprehenderit Williamsburg meditation pop-up cold-pressed chillwave put a bird on it aliquip.
+        </p>
+        <p>
+          Schlitz kogi laboris mollit, Vice kale chips umami synth vegan deep v quis.
+          Proident trust fund brunch, dolore aesthetic tilde post-ironic banh mi
+          delectus direct trade freegan ethical bespoke leggings selvage.
+          Cold-pressed paleo eiusmod hella kale chips. Eiusmod bicycle
+        </p>
+        <a href="#navigation" class="js-hidden">
+          <small>Back to top</small>
+        </a>
+      </div>
+
+      <div id="panel3" class="panel">
+        <h2  class="js-hidden">
+          Tab content 3
+        </h2>
+        <p>
+          Truffaut flannel messenger bag Bushwick, drinking vinegar High Life Helvetica
+          reprehenderit Williamsburg meditation pop-up cold-pressed chillwave put a bird on it aliquip.
+        </p>
+        <p>
+          Craft beer est salvia, bitters mlkshk paleo proident. Photo booth assumenda
+          voluptate, accusamus +1 Kickstarter bespoke swag cardigan scenester hella odio Pinterest bitters.
+        </p>
+        <p>
+          Schlitz kogi laboris mollit, Vice kale chips umami synth vegan deep v quis.
+          Proident trust fund brunch, dolore aesthetic tilde post-ironic banh mi
+          delectus direct trade freegan ethical bespoke leggings selvage.
+          Cold-pressed paleo eiusmod hella kale chips. Eiusmod bicycle
+        </p>
+        <a href="#navigation" class="js-hidden">
+          <small>Back to top</small>
+        </a>
+      </div>
+
+    </div>
+
+    <script src="bower_components/requirejs/require.js"></script>
+    <script>
+      requirejs.config({
+        paths: {
+          lib: 'bower_components/accessible-tabs/lib',
+          flight: 'bower_components/flight',
+          jquery: 'bower_components/jquery/dist/jquery'
+        }
+      });
+      require(['lib/tabs'], function (tabs) {
+        console.log('tabs');
+        tabs.attachTo('.tabset');
+      });
+    </script>
+  </body>
+</html>

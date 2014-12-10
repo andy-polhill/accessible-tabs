@@ -1,0 +1,79 @@
+body {
+  width:500px;
+  margin: 0 auto;
+  font-family: Verdana, Geneva, sans-serif;
+  font-size:16px;
+}
+*:focus {
+  outline:3px solid #ffbf47;
+  outline-offset: -3px;
+}
+
+label {
+  display:block;
+}
+input {
+  font-size:16px;
+  padding:5px;
+}
+
+.tabset .tabs {
+  padding:0;
+}
+
+.tabset .tabs .tab {
+  list-style-type:none;
+}
+
+.js-enabled .tabset .tabs {
+  margin-bottom:0;
+  border-left:solid 1px;
+}
+
+.js-enabled .tabset .tabs .tab {
+  float:left;
+  margin:0;
+}
+
+.js-enabled .tabset .tabs .tab a {
+  padding:10px;
+  display:block;
+  border-right:solid 1px;
+  border-top:solid 1px;
+  background-color:#ddd;
+}
+
+.js-enabled .tabset .tabs .active-tab a {
+  background-color:#fff;
+  cursor:default;
+  text-decoration:none;
+  color:black;
+}
+
+.js-enabled .tabset .panel {
+  display:none;
+  border:solid 1px;
+  padding:20px;
+}
+
+.js-enabled .js-hidden {
+  display:none;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/**
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+.clearfix {
+    *zoom: 1;
+}
