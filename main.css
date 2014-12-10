@@ -1,10 +1,24 @@
+/* Some simple basic styles */
 body {
   width:500px;
   margin: 0 auto;
   font-family: Verdana, Geneva, sans-serif;
   font-size:16px;
 }
-*:focus {
+h1 {
+  margin:40px 0;
+  font-size:30px;
+}
+h2 small {
+  color:#999;
+  font-weight:normal;
+}
+section {
+  padding-bottom:30px;
+}
+a:focus,
+input:focus
+ {
   outline:3px solid #ffbf47;
   outline-offset: -3px;
 }
@@ -17,6 +31,7 @@ input {
   padding:5px;
 }
 
+/* Non JavaScript Tab fallback */
 .tabset .tabs {
   padding:0;
 }
@@ -25,6 +40,7 @@ input {
   list-style-type:none;
 }
 
+/* JavaScript enabled tab styling */
 .js-enabled .tabset .tabs {
   margin-bottom:0;
   border-left:solid 1px;
@@ -43,23 +59,31 @@ input {
   background-color:#ddd;
 }
 
-.js-enabled .tabset .tabs .active-tab a {
+.js-enabled .tabset .tabs .tab a[aria-selected=true] {
   background-color:#fff;
   cursor:default;
   text-decoration:none;
   color:black;
 }
 
-.js-enabled .tabset .panel {
-  display:none;
+.js-enabled .tabset .panel[aria-hidden=false] {
+  display:block;
   border:solid 1px;
   padding:20px;
+}
+
+.js-enabled .tabset .panel[aria-hidden=true] {
+  display:none;
 }
 
 .js-enabled .js-hidden {
   display:none;
 }
 
+/**
+ * Lightweight clearfix
+ * http://nicolasgallagher.com/micro-clearfix-hack
+ */
 .clearfix:before,
 .clearfix:after {
     content: " "; /* 1 */

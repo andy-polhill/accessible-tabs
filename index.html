@@ -7,82 +7,200 @@
   <body>
     <script type="text/javascript">document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
 
-    <div class="tabset">
+    <section>
+      <h1>Accessible Tabs test</h1>
 
-      <h2 id="navigation" class="js-hidden">
-        Quick navigation
-      </h2>
+      <p>
+        The purpose of this page is to offer a few different examples as to how a tab component can be made accessible.
+        The particular concern is around keyboard control and the correct use of aria roles, at present there seems to be
+        two schools of thought as to how a keyboard should be used to control tabs, and it would be good to come up with
+        a general consensus to the best approach.
+      </p>
+      <p>
+        This is a living document and will be updated with latest feedback and results
+        from user testing.
+      </p>
+    </section>
 
-      <ul class="tabs clearfix">
-        <li class="tab active-tab">
-          <a id="tab-link1" href="#panel1">Tab item 1</a>
-        </li>
-        <li class="tab">
-          <a id="tab-link2" href="#panel2">Tab item 2</a>
-        </li>
-        <li class="tab">
-          <a id="tab-link3" href="#panel3">Tab item 3</a>
-        </li>
-      </ul>
+    <section>
+      <h2>Tab key controlled <small>Example 1</small></h2>
 
-      <div id="panel1" class="panel active-panel">
-        <h2  class="js-hidden">Tab content 1</h2>
-        <form>
-          <label for="name">Name</label>
-          <input type="text" id="name" />
-        </form>
-        <a href="#navigation" class="js-hidden">
-          <small>Back to top</small>
-        </a>
-      </div>
+      <div class="tabset js-tabs">
 
-      <div id="panel2" class="panel">
-        <h2  class="js-hidden">
-          Tab content 2
+        <h2 id="navigation" class="js-hidden">
+          Quick navigation
         </h2>
-        <p>
-          Craft beer est salvia, bitters mlkshk paleo proident. Photo booth assumenda
-          voluptate, accusamus +1 Kickstarter bespoke swag cardigan scenester hella odio Pinterest bitters.
-        </p>
-        <p>
-          Truffaut flannel messenger bag Bushwick, drinking vinegar High Life Helvetica
-          reprehenderit Williamsburg meditation pop-up cold-pressed chillwave put a bird on it aliquip.
-        </p>
-        <p>
-          Schlitz kogi laboris mollit, Vice kale chips umami synth vegan deep v quis.
-          Proident trust fund brunch, dolore aesthetic tilde post-ironic banh mi
-          delectus direct trade freegan ethical bespoke leggings selvage.
-          Cold-pressed paleo eiusmod hella kale chips. Eiusmod bicycle
-        </p>
-        <a href="#navigation" class="js-hidden">
-          <small>Back to top</small>
-        </a>
-      </div>
 
-      <div id="panel3" class="panel">
-        <h2  class="js-hidden">
-          Tab content 3
+        <p>
+          In this example the user can navigate through the tabs by pressing the tab key, hitting the enter key while the tab
+          is in focus will reveal the content for that tab.
+        </p>
+
+        <ul class="tabs clearfix">
+          <li class="tab">
+            <a id="tab-link1" href="#panel1">Tab item 1</a>
+          </li>
+          <li class="tab">
+            <a id="tab-link2" href="#panel2">Tab item 2</a>
+          </li>
+          <li class="tab">
+            <a id="tab-link3" href="#panel3">Tab item 3</a>
+          </li>
+        </ul>
+
+        <div id="panel1" class="panel">
+          <form>
+            <label for="name">Name</label>
+            <input type="text" id="name" />
+          </form>
+          <a href="#navigation" class="js-hidden">
+            <small>Back to top</small>
+          </a>
+        </div>
+
+        <div id="panel2" class="panel">
+          <h3>Sub title 1</h3>
+          <p>
+            Craft beer est salvia, bitters mlkshk paleo proident. Photo booth assumenda
+            voluptate, accusamus +1 Kickstarter bespoke swag cardigan scenester hella odio Pinterest bitters.
+          </p>
+          <p>
+            Truffaut flannel messenger bag Bushwick, drinking vinegar High Life Helvetica
+            reprehenderit Williamsburg meditation pop-up cold-pressed chillwave put a bird on it aliquip.
+          </p>
+          <h3>Sub title 2</h3>
+          <p>
+            Schlitz kogi laboris mollit, Vice kale chips umami synth vegan deep v quis.
+            Proident trust fund brunch, dolore aesthetic tilde post-ironic banh mi
+            delectus direct trade freegan ethical bespoke leggings selvage.
+            Cold-pressed paleo eiusmod hella kale chips. Eiusmod bicycle
+          </p>
+          <a href="#navigation" class="js-hidden">
+            <small>Back to top</small>
+          </a>
+        </div>
+
+        <div id="panel3" class="panel">
+          <h3>Sub title 1</h3>
+          <p>
+            Truffaut flannel messenger bag Bushwick, drinking vinegar High Life Helvetica
+            reprehenderit Williamsburg meditation pop-up cold-pressed chillwave put a bird on it aliquip.
+          </p>
+          <p>
+            Craft beer est salvia, bitters mlkshk paleo proident. Photo booth assumenda
+            voluptate, accusamus +1 Kickstarter bespoke swag cardigan scenester hella odio Pinterest bitters.
+          </p>
+          <p>
+            Schlitz kogi laboris mollit, Vice kale chips umami synth vegan deep v quis.
+            Proident trust fund brunch, dolore aesthetic tilde post-ironic banh mi
+            delectus direct trade freegan ethical bespoke leggings selvage.
+            Cold-pressed paleo eiusmod hella kale chips. Eiusmod bicycle
+          </p>
+          <a href="#navigation" class="js-hidden">
+            <small>Back to top</small>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <section>
+      <h2>Cursor key controlled <small>Example 2</small></h2>
+
+      <div class="tabset js-cursor-tabs">
+
+        <h2 id="navigation" class="js-hidden">
+          Quick navigation
         </h2>
-        <p>
-          Truffaut flannel messenger bag Bushwick, drinking vinegar High Life Helvetica
-          reprehenderit Williamsburg meditation pop-up cold-pressed chillwave put a bird on it aliquip.
-        </p>
-        <p>
-          Craft beer est salvia, bitters mlkshk paleo proident. Photo booth assumenda
-          voluptate, accusamus +1 Kickstarter bespoke swag cardigan scenester hella odio Pinterest bitters.
-        </p>
-        <p>
-          Schlitz kogi laboris mollit, Vice kale chips umami synth vegan deep v quis.
-          Proident trust fund brunch, dolore aesthetic tilde post-ironic banh mi
-          delectus direct trade freegan ethical bespoke leggings selvage.
-          Cold-pressed paleo eiusmod hella kale chips. Eiusmod bicycle
-        </p>
-        <a href="#navigation" class="js-hidden">
-          <small>Back to top</small>
-        </a>
-      </div>
 
-    </div>
+        <p>
+          In this example the user can navigate through the tabs by pressing the left and right cursor key, the tab content will
+          reveal itself immediately.
+        </p>
+
+        <ul class="tabs clearfix">
+          <li class="tab">
+            <a id="tab-link1" href="#panel1">Tab item 1</a>
+          </li>
+          <li class="tab">
+            <a id="tab-link2" href="#panel2">Tab item 2</a>
+          </li>
+          <li class="tab">
+            <a id="tab-link3" href="#panel3">Tab item 3</a>
+          </li>
+        </ul>
+
+        <div id="panel1" class="panel">
+          <form>
+            <label for="name">Name</label>
+            <input type="text" id="name" />
+          </form>
+          <a href="#navigation" class="js-hidden">
+            <small>Back to top</small>
+          </a>
+        </div>
+
+        <div id="panel2" class="panel">
+          <h3>Sub title 1</h3>
+          <p>
+            Craft beer est salvia, bitters mlkshk paleo proident. Photo booth assumenda
+            voluptate, accusamus +1 Kickstarter bespoke swag cardigan scenester hella odio Pinterest bitters.
+          </p>
+          <p>
+            Truffaut flannel messenger bag Bushwick, drinking vinegar High Life Helvetica
+            reprehenderit Williamsburg meditation pop-up cold-pressed chillwave put a bird on it aliquip.
+          </p>
+          <h3>Sub title 2</h3>
+          <p>
+            Schlitz kogi laboris mollit, Vice kale chips umami synth vegan deep v quis.
+            Proident trust fund brunch, dolore aesthetic tilde post-ironic banh mi
+            delectus direct trade freegan ethical bespoke leggings selvage.
+            Cold-pressed paleo eiusmod hella kale chips. Eiusmod bicycle
+          </p>
+          <a href="#navigation" class="js-hidden">
+            <small>Back to top</small>
+          </a>
+        </div>
+
+        <div id="panel3" class="panel">
+          <h3>Sub title 1</h3>
+          <p>
+            Truffaut flannel messenger bag Bushwick, drinking vinegar High Life Helvetica
+            reprehenderit Williamsburg meditation pop-up cold-pressed chillwave put a bird on it aliquip.
+          </p>
+          <p>
+            Craft beer est salvia, bitters mlkshk paleo proident. Photo booth assumenda
+            voluptate, accusamus +1 Kickstarter bespoke swag cardigan scenester hella odio Pinterest bitters.
+          </p>
+          <p>
+            Schlitz kogi laboris mollit, Vice kale chips umami synth vegan deep v quis.
+            Proident trust fund brunch, dolore aesthetic tilde post-ironic banh mi
+            delectus direct trade freegan ethical bespoke leggings selvage.
+            Cold-pressed paleo eiusmod hella kale chips. Eiusmod bicycle
+          </p>
+          <a href="#navigation" class="js-hidden">
+            <small>Back to top</small>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <section>
+      <div id="disqus_thread"></div>
+      <script type="text/javascript">
+          /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+          var disqus_shortname = 'accessibletabs'; // required: replace example with your forum shortname
+
+          /* * * DON'T EDIT BELOW THIS LINE * * */
+          (function() {
+              var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+              dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+              (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+          })();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </section>
 
     <script src="bower_components/requirejs/require.js"></script>
     <script>
@@ -93,9 +211,9 @@
           jquery: 'bower_components/jquery/dist/jquery'
         }
       });
-      require(['lib/tabs'], function (tabs) {
-        console.log('tabs');
-        tabs.attachTo('.tabset');
+      require(['lib/tabs','lib/tabs-cursor'], function (tabs, tabsCursor) {
+        tabs.attachTo('.js-tabs');
+        tabsCursor.attachTo('.js-cursor-tabs');
       });
     </script>
   </body>

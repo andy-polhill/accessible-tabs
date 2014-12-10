@@ -18,11 +18,11 @@
     "karma.conf.js"
   ],
   "homepage": "https://github.com/thatguynamedandy/accessible-tabs",
-  "_release": "d427bc9d6b",
+  "_release": "d5414a4173",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "d427bc9d6bf60a11b8502d7530e2a8e17227013c"
+    "commit": "d5414a4173791feb1e47e036566999cc04b22e24"
   },
   "_source": "https://github.com/thatguynamedandy/accessible-tabs.git",
   "_target": "*",
