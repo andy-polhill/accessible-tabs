@@ -1,4 +1,4 @@
-# flight-accessible-tabs
+# Accessible Tabs
 
 [![Build Status](https://secure.travis-ci.org/<username>/flight-accessible-tabs.png)](http://travis-ci.org/<username>/flight-accessible-tabs)
 
