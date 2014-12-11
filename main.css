@@ -1,12 +1,24 @@
 /* Some simple basic styles */
 * {
   font-family: Verdana, Geneva, sans-serif;
-  font-size:16px;
+  font-size:12px;
 }
 body {
-  width:500px;
-  margin: 0 auto;
+  width:auto;
+  margin: 0 10px;
 }
+
+@media (min-width: 500px) {
+  body {
+    width:500px;
+    margin: 0 auto;
+  }
+
+  * {
+    font-size:16px;
+  }
+}
+
 main {
   margin-bottom:40px;
 }
