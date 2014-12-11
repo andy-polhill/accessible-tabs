@@ -52,7 +52,7 @@ define(function (require) {
      * @method clickTab
      */
     this.clickTab = function (evt) {
-      this.changeTab($(evt.currentTarget));
+      this.changeTab($(evt.currentTarget)).focus();
       evt.preventDefault();
     };
 
@@ -78,8 +78,6 @@ define(function (require) {
       $targetTab.attr('aria-selected', 'true');
       $targetPanel.attr('aria-hidden','false');
 
-      $targetTab.focus();
-
       return $targetTab;
     };
 
@@ -103,29 +101,32 @@ define(function (require) {
      * @method after:initialize
      */
     this.after('initialize', function () {
-      this.$list = this.select('listSelector');
       this.$tabs = this.select('tabSelector');
-      this.$panels = this.select('panelSelector');
 
-      //Static aria roles
-      this.$list.attr('role', 'tablist');
-      this.$tabs.attr({
-        'role': 'tab',
-        'aria-selected': 'false'
-      });
+      if(this.$tabs.length > 1) {
+        this.$list = this.select('listSelector');
+        this.$panels = this.select('panelSelector');
 
-      this.$panels.attr({
-        'role': 'tabpanel',
-        'aria-hidden': 'true'
-      });
+        //Static aria roles
+        this.$list.attr('role', 'tablist');
+        this.$tabs.attr({
+          'role': 'tab',
+          'aria-selected': 'false'
+        });
 
-      //Dynamic aria roles per tab
-      this.$tabs.each($.proxy(this.initializeTab, this));
+        this.$panels.attr({
+          'role': 'tabpanel',
+          'aria-hidden': 'true'
+        });
 
-      this.on(this.$tabs, 'click', this.clickTab);
+        //Dynamic aria roles per tab
+        this.$tabs.each($.proxy(this.initializeTab, this));
 
-      //select first tab
-      this.changeTab(this.$tabs.eq(0));
+        this.on(this.$tabs, 'click', this.clickTab);
+
+        //select first tab
+        this.changeTab(this.$tabs.eq(0));
+      }
     });
   }
 

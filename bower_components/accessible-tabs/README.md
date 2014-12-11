@@ -1,50 +1,19 @@
-# flight-accessible-tabs
+# Accessible Tabs
 
 [![Build Status](https://secure.travis-ci.org/<username>/flight-accessible-tabs.png)](http://travis-ci.org/<username>/flight-accessible-tabs)
 
-A [Flight](https://github.com/flightjs/flight) component for…
+A [Flight](https://github.com/flightjs/flight) component for generating an accessible tab component.
 
-## Installation
+This project is concerned about determining the correct markup required to make tabs accessible, and
+not to provide a tab component for general use. However feel free to take a poke through the code.
 
-```bash
-bower install --save flight-accessible-tabs
-```
+To get involved in the discussion around making tabs accessible, view the working demo
 
-## Example
+http://thatguynamedandy.github.io/accessible-tabs/
 
-…
+Some of the considerations taken into account are as follows
 
-## Development
-
-Development of this component requires [Bower](http://bower.io) to be globally
-installed:
-
-```bash
-npm install -g bower
-```
-
-Then install the Node.js and client-side dependencies by running the following
-commands in the repo's root directory.
-
-```bash
-npm install & bower install
-```
-
-To continuously run the tests in Chrome during development, just run:
-
-```bash
-npm run watch-test
-```
-
-## Contributing to this project
-
-Anyone and everyone is welcome to contribute. Please take a moment to
-review the [guidelines for contributing](CONTRIBUTING.md).
-
-* [Bug reports](CONTRIBUTING.md#bugs)
-* [Feature requests](CONTRIBUTING.md#features)
-* [Pull requests](CONTRIBUTING.md#pull-requests)
-
-##
-
-* Only add tab roles when one or more tabs is avilable
+* The baseline non Javascript version of the code should display all of the tab content, with quick nav links to specific sections.
+* Any ARIA roles should only be added when JavaScript is enabled, up until that point it is effectively not a tab.
+* Tab controls should only be applied when there is more than one tab, otherwise it isn't really a tab.
+* The ARIA attribute values can be used to drive the Javascript, and also used with the CSS to control visibility (CSS2.0 attribute selectors)
